@@ -39,6 +39,8 @@ public class ToggleButton : MonoBehaviour
             ImageOn = image.sprite;
         if(ImageOff == null)
             ImageOff = image.sprite;
+
+        OnClickToggle(IsOn);
     }
     public void SetToggleOn()
     {
@@ -58,5 +60,10 @@ public class ToggleButton : MonoBehaviour
     {
         if (IsOn) SetToggleOff();
         else SetToggleOn();
+    }
+    public void OnClickToggle(bool setOn)
+    {
+        if (setOn) SetToggleOn();
+        else SetToggleOff();
     }
 }
