@@ -35,6 +35,10 @@ public class ToggleButton : MonoBehaviour
         button.onClick.AddListener(OnClickToggle);
         if(!ButtonTransitionOn)
             button.transition = Selectable.Transition.None;
+        if (ImageOn == null)
+            ImageOn = image.sprite;
+        if(ImageOff == null)
+            ImageOff = image.sprite;
     }
     public void SetToggleOn()
     {
