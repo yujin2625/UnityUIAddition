@@ -1,8 +1,8 @@
 # UnityAdditionUI
 
 ## How To Use
-1. Radio Button
-2. Toggle Button
+[1. Radio Button](https://github.com/yujin2625/UnityUIAddition#1-radio-button)
+[2. Toggle Button](https://github.com/yujin2625/UnityUIAddition#2-toggle-button)
 ---
 ### 1. Radio Button
 - Simply Add RadioButton.cs script at GameObject to turn it to radio button. <br>
