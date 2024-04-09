@@ -12,6 +12,8 @@ public class RadioButtonGroup : MonoBehaviour
     [SerializeField] private Color NormalColor = Color.white;
     [SerializeField] private Color SelectedColor = Color.white;
 
+    [SerializeField] private bool SetButtonTransitionOn = false;
+
     private RadioButton SelectedButton;
     public int SelectedButtonIndex { get { if (SelectedButton == null) return 0; return RadioButtons.IndexOf(SelectedButton); } }
 
@@ -29,12 +31,15 @@ public class RadioButtonGroup : MonoBehaviour
         {
             Debug.LogError("RadioButtons are not unique");
         }
-        SetRadioButtonOn(RadioButtons, ClickedOnAwakeButton);
-
         foreach(RadioButton button in RadioButtons)
         {
+            button.InitComponents();
             button.GetComponent<Button>().onClick.AddListener(RadioSelected);
+            if (!SetButtonTransitionOn)
+                button.GetComponent<Button>().transition = Selectable.Transition.None;
         }
+
+        SetRadioButtonOn(RadioButtons, ClickedOnAwakeButton);
     }
     private void SetRadioButtonOn(List<RadioButton> radiobuttons, int index)
     {

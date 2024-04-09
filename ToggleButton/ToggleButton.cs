@@ -33,6 +33,7 @@ public class ToggleButton : MonoBehaviour
         if (!TryGetComponent<Image>(out image))
             Debug.LogError("Image component not set with toggle script");
         button.onClick.AddListener(OnClickToggle);
+        
         if(!ButtonTransitionOn)
             button.transition = Selectable.Transition.None;
         if (ImageOn == null)
